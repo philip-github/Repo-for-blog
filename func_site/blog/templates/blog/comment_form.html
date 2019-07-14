@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+{% block bodyblock %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>New Comment</title>
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="jumbotron">
+
+        <h2>New Comment</h2>
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-primary">Post Comment</button>
+        </form>
+
+        <script>var editor = new MediumEditor('.editable');</script>
+
+      </div>
+
+    </div>
+
+  {% endblock %}
+  </body>
+</html>
